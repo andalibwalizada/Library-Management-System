@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>📚 Library Management System</h1>
+
+    <h2>Add New Book</h2>
+    <form action="/add" method="POST">
+        <input type="text" name="title" placeholder="Book Title" required>
+        <input type="text" name="author" placeholder="Author" required>
+        <button type="submit">Add Book</button>
+    </form>
+
+    <h2>Books in Library</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book[1] }} by {{ book[2] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
